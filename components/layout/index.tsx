@@ -1,14 +1,15 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import {memo, useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 
-import Footer from './footer';
-import Header from './header';
 import {ListLayout} from './ListLayout';
 import {LayoutContainer, LayoutMainContentContainer} from './styles';
 
 import {progressInit} from '@/utils';
+const Header = dynamic(() => import('./header'), {ssr: false});
+const Footer = dynamic(() => import('./footer'), {ssr: false});
 
 export const Layout = memo(({children}) => {
   const {t} = useTranslation();
