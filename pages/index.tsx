@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   const {t} = useTranslation();
   const lang = i18n.language;
   const [showAll, setShowAll] = useState(false);
-  const formatter = (value: number) => <CountUp end={value} separator=',' />;
+  const formatter = (value: any) => <CountUp end={value} separator=',' />;
   const router = useRouter();
   const items: CollapseProps['items'] = [
     {

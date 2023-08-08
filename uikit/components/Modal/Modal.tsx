@@ -10,8 +10,6 @@ import {
 } from './style';
 import {ModalProps} from './types';
 
-import {Loading} from '@/components';
-
 const Modal: FC<ModalProps> = memo((props) => {
   const {
     destroyOnClose,
@@ -72,9 +70,6 @@ const Modal: FC<ModalProps> = memo((props) => {
         {isLoading ? (
           <ModalLoading>
             <div className='text'>Please Wait...</div>
-            <div className='loading'>
-              <Loading />
-            </div>
           </ModalLoading>
         ) : isDesChild ? null : (
           children
