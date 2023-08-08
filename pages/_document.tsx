@@ -36,7 +36,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head>
           <meta
             content='Dynamic Wallpaper,Live Wallpaper,Wallpaper Engine,Screen Saver,Backgrounds,Irvue'

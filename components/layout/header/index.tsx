@@ -44,6 +44,7 @@ const Header: NextPage = () => {
           }}
         >
           <img
+            alt='icon'
             height={20}
             src='/static/image/en.png'
             style={{marginRight: '5px'}}
@@ -64,6 +65,7 @@ const Header: NextPage = () => {
           }}
         >
           <img
+            alt='icon'
             height={20}
             src='/static/image/zh.png'
             style={{marginRight: '5px'}}
