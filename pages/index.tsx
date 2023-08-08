@@ -201,9 +201,8 @@ const Home: NextPage = () => {
               }
               itemLayout='vertical'
               pagination={{
-                onChange: (page) => {
-                  console.log(page);
-                },
+                position: 'top',
+                align: 'end',
                 pageSize: 3,
               }}
               renderItem={(item) => (
