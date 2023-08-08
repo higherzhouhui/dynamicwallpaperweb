@@ -121,7 +121,7 @@ export const FooterContainer = styled.footer`
   }
   .copyright {
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
     font-size: 16px;
     line-height: 38px;
