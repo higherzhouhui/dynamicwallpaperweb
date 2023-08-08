@@ -29,7 +29,7 @@ export const HeaderContainer = styled.header`
         margin-left: 60px;
         display: flex;
         .title {
-          margin-right: 18px;
+          margin-right: 58px;
           font-size: 18px;
           cursor: pointer;
           color: #000;
