@@ -15,8 +15,10 @@ export const AboutContainer = styled.main`
       align-items: center;
       justify-content: center;
       p {
-        font-size: 22px;
+        font-size: 28px;
         color: #fff;
+        font-weight: bold;
+        border-bottom: 3px solid #fff;
       }
     }
   }
@@ -30,6 +32,8 @@ export const AboutContainer = styled.main`
       font-size: 19px;
       font-weight: bold;
       margin: 12px 0;
+      width: fit-content;
+      border-bottom: 2px solid;
     }
     .item {
       font-size: 16px;

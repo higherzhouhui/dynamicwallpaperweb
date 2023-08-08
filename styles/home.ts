@@ -66,6 +66,8 @@ export const HomeContainer = styled.main`
       font-weight: bold;
       line-height: 36px;
       margin: 18px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px dotted #ccc;
     }
   }
   .introduce {
@@ -93,7 +95,10 @@ export const HomeContainer = styled.main`
     }
   }
   .gongneng {
-    margin: 18px 0;
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 18px;
     .Statistic {
       display: flex;
       justify-content: center;
@@ -107,8 +112,9 @@ export const HomeContainer = styled.main`
       .item {
         border-radius: 8px;
         overflow: hidden;
-        cursor: pointer;
         border: 1px solid transparent;
+        background: #fff;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
         &:hover {
           .imgWrapper {
             transform: scale(1.05);
@@ -120,14 +126,14 @@ export const HomeContainer = styled.main`
           height: 0;
           padding-bottom: 64%;
           transition: all 0.5s;
+          cursor: pointer;
         }
         .desc {
           width: 100%;
           padding: 18px 12px;
-          background: #fff;
-          box-shadow: 3px 3px 100px rgba(255, 255, 255, 0.8);
-          height: 70px;
           font-size: 15px;
+          font-weight: 500;
+          font-style: italic;
         }
       }
     }

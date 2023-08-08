@@ -33,16 +33,15 @@ export const FooterContainer = styled.footer`
       width: 850px;
       .list {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         row-gap: 10px;
         @media screen and (min-width: 1440px) {
-          grid-template-columns: repeat(4, 1fr);
           row-gap: 28px;
         }
         .link {
-          color: #eee;
+          color: #ddd;
           font-size: 15px;
-          background: rgba(0, 0, 0, 0.7);
+          background: rgba(0, 0, 0, 0.6);
           width: fit-content;
           padding: 6px 12px;
           border-radius: 8px;
@@ -102,8 +101,9 @@ export const FooterContainer = styled.footer`
       margin-right: 6px;
     }
     .comeList {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       .item {
         color: #eee;
         font-size: 15px;
@@ -111,6 +111,7 @@ export const FooterContainer = styled.footer`
         width: fit-content;
         padding: 6px 12px;
         border-radius: 8px;
+        word-break: break-all;
         &:hover {
           color: #fff;
           background: rgba(0, 0, 0, 0.8);

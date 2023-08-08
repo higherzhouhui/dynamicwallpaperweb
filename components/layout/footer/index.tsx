@@ -133,7 +133,7 @@ const Footer: NextPage = () => {
               <div className='text'>{t('swhz')}</div>
             </div>
             <div className='comeList'>
-              <div className='item'>{t('phone')}：4000270816（9:00-18:00）</div>
+              <div className='item'>{t('phone')}：400027081（24H）</div>
               <div className='item'>{t('email')}：wenhao@gmail.com</div>
               <div className='item'>
                 {t('address')}：{t('daddress')}
@@ -142,12 +142,7 @@ const Footer: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className='copyright'>
-        Copyright © 2021 - 2023 {t('copyright')} <span>|</span>
-        <a href='https://beian.miit.gov.cn/' rel='noreferrer' target='_blank'>
-          渝ICP备2023007595号-1-1
-        </a>
-      </div>
+      <div className='copyright'>Copyright © 2021 - 2023 {t('copyright')}</div>
     </FooterContainer>
   );
 };
