@@ -15,12 +15,12 @@ const Footer: NextPage = () => {
   const {t} = useTranslation();
   const staticList = [
     {
-      href: 'https://apps.apple.com/cn/app/%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E5%BC%95%E6%93%8Edynamic-wallpaper-engine/id1453504509?mt=12',
+      href: 'https://apps.apple.com/cn/app/id1453504509?mt=12',
       logo: '/static/icon/apple.png',
       title: t('appleZh'),
     },
     {
-      href: 'https://apps.apple.com/app/id1453504509',
+      href: 'https://apps.apple.com/app/id1453504509?mt=12',
       logo: '/static/icon/apple.png',
       title: t('Mac App Store'),
     },
