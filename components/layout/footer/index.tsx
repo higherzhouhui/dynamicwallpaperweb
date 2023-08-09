@@ -8,6 +8,7 @@ import {FooterContainer} from './styles';
 import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
+import { SvgIcon } from '@/uikit';
 
 const Footer: NextPage = () => {
   const lang = i18n.language;
@@ -117,7 +118,7 @@ const Footer: NextPage = () => {
                 rel='noreferrer'
                 target='_blank'
               >
-                {t('download')}
+                <SvgIcon height={50} name={`${lang}blackdown`} />
               </a>
             </div>
           </div>
@@ -133,11 +134,7 @@ const Footer: NextPage = () => {
               <div className='text'>{t('swhz')}</div>
             </div>
             <div className='comeList'>
-              <div className='item'>{t('phone')}：400027081（24H）</div>
-              <div className='item'>{t('email')}：wenhao@gmail.com</div>
-              <div className='item'>
-                {t('address')}：{t('daddress')}
-              </div>
+              <div className='item'>{t('email')}：wen646729740@gmail.com</div>
             </div>
           </div>
         </div>

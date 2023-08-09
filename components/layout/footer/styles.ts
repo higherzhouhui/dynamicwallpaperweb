@@ -62,16 +62,10 @@ export const FooterContainer = styled.footer`
       display: flex;
       justify-content: center;
       .downBtn {
-        padding: 12px 18px;
-        border-radius: 18px;
-        background: rgba(239, 68, 59, 0.8);
-        font-size: 16px;
-        color: #fff;
         transition: all 0.2s;
         font-weight: bold;
         &:hover {
-          transform: scale(1.05);
-          background: rgba(239, 68, 59, 1);
+          transform: scale(1.1);
         }
       }
     }

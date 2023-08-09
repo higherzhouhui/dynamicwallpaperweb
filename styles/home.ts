@@ -6,7 +6,7 @@ export const HomeContainer = styled.main`
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 27%;
+    padding-bottom: 28%;
     .downWrapper {
       position: absolute;
       left: 0;
@@ -14,10 +14,48 @@ export const HomeContainer = styled.main`
       top: 0;
       bottom: 0;
       margin: auto;
-      transform: translate(-400px, 50px);
+      transform: translate(-400px, 0px);
       z-index: 9;
       width: fit-content;
       height: fit-content;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      border-radius: 8px;
+      color: #eee;
+      padding: 3px 10px;
+      @media screen and (max-width: 1440px) {
+        transform: translate(-300px, 0px);
+      }
+      .title {
+        font-size: 14px;
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+      .slogo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        div {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 24px;
+          @media screen and (max-width: 1440px) {
+            font-size: 15px;
+          }
+        }
+        .color1 {
+          color: #007aff;
+        }
+        .color2 {
+          color: rgb(217, 238, 10);
+        }
+      }
+      .svgIcon {
+        transition: all 0.2s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
       .support {
         display: flex;
         .left {
@@ -69,6 +107,19 @@ export const HomeContainer = styled.main`
       padding-bottom: 6px;
       border-bottom: 1px dotted #ccc;
     }
+    .listItem {
+      list-style: inside;
+      font-size: 16px;
+      line-height: 28px;
+      margin: 12px 0;
+      width: fit-content;
+      border-bottom: 1px solid #999;
+      color: #666;
+      &:hover {
+        background: #f5f5f5;
+        color: #000;
+      }
+    }
   }
   .introduce {
     padding: 8px 12px;
@@ -88,6 +139,7 @@ export const HomeContainer = styled.main`
       line-height: 30px;
       margin: 12px 0;
       color: #007aff;
+      text-decoration: underline;
       img {
         width: 24px;
         height: 24px;

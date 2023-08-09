@@ -1,5 +1,8 @@
 export default {
   title: 'Dynamic Wallpaper Engine for Mac',
+  downTitle: 'Dynamic Wallpaper Engine for Mac',
+  gbdd: 'Say goodbye to monotony',
+  ybhp: 'Hug lively',
   shouye: 'Home',
   productIntroduce: 'Product Description',
   feature: 'Characteristic',
@@ -23,11 +26,11 @@ export default {
   pi: 'π minority',
   zhihu: 'Zhihu',
   tengxy: 'Tencent Community',
-  appleZh: 'Mac App Store(ZH)',
+  appleZh: 'Mac App Store(CN)',
   light: 'Highlights',
   tiyan: 'Immersive Experience',
-  gsjj: 'Company Profile',
-  downLoadUrl: 'https://apps.apple.com/app/id1453504509',
+  gsjj: 'Profile',
+  downLoadUrl: 'https://apps.apple.com/app/id1453504509?mt=12',
   productDesc:
     "Dynamic Wallpaper Engine allows you to use live wallpapers on your desktop/screensaver. It provides thousands of live wallpapers in the Workshop while taking as little system resources as possible. It's the Wallpaper Engine for Mac.",
   desc1:
@@ -46,10 +49,10 @@ export default {
   desc9:
     'All kinds of game world animation characters, shorten the distance between you and your love',
   desc10: 'Photo of Yujie, loli, long legs, all kinds of beauties',
-  user1: 'MackJson Li',
+  user1: 'lydi44',
   userDesc1: 'Users who have used it for more than two years（MacBook）',
   comment1:
-    'The best dynamic wallpaper software, no other software can compare, it is simply weak, there are many dynamic wallpapers, it is very convenient to choose, the function is very powerful, and the team feels very hardworking, every upgrade can make the software better It is more convenient to use, and the replies to the questions are also very attentive and honest, which is great.',
+    'There’s a plethora of random dynamic wallpaper utilities on the app store, but most are either buggy as crap or locked beyond pointless paywalls. If your search brought you here, believe me, this is leagues beyond any of the other options here and it’s ACTUALLY free, there are no in-app purchases or sneaky paywalls. Amazing selection of wallpapers that get updated fairly regularly, the only thing I would mention is that it’s probably 50% anime and there’s a few wallpapers that are a tad NSFW (but that isn’t related to the quality of the app itself so proceed at your own discernment). Doesn’t have too much of a battery or memory load and works like a charm; it definitely gives Wallpaper Engine on PC a run for its money.',
   user2: 'mono.mirrorz',
   userDesc2: 'Users who have used it for more than one year（MacBook Air）',
   comment2:
@@ -58,22 +61,40 @@ export default {
   userDesc3: 'Users who have used it for more than one year（MacBook Pro）',
   comment3:
     'This is a great alternative for Wallpaper Engine and is also incredibly easy to use. The wallpapers are beautiful and clear. The app is updated with different backgrounds often as well. I highly recommend it if you have been looking for an app that offers beautiful, dynamic wallpapers! :)',
-  user4: 'James Lebro',
+  user4: 'bleujazz',
   userDesc4: 'Users who have used it for more than one year（MacBook）',
-  comment4:
-    "People still need to maintain the ability to be satisfied with the details of life, such as tasting long-lost things, revisiting familiar street corners, buying favorite posters, using Fuyu's changing wallpapers, and feeling tender moments. These seemingly fragmented life fragments are actually The secret passage to the happy planet, live wallpaper, it's nice to have you! ! !",
-  user5: 'Kebo BryEN',
+  comment4: `Versatile, Excellent Value, Works As Expected
+    Although many of the desktop and screensaver video loops contain tangible beginnings and ends, some of the videos are seamlessly integrated, and it's these I am grateful for.
+   
+    The software developers are from Japan, which accounnts for the numerous anime-related clips.
+    
+    My only wish were that for some of the scenic waterfalls or room scenes, one need not turn off the audio if one doesn't wish to listen to the adaptive sound connected to the clip.
+    
+    The option to turn off Dynamic Wallpaper's audio is stil there, and that improves the versatility of this app.
+    
+    5 Stars for a beautifully crafted piece or artwork one can adapt to their desktop.`,
+  user5: 'Jothsa',
   userDesc5: 'Users who have used it for more than half a year（MacBook）',
   comment5:
     'I usually use it a lot, it is comprehensive in all aspects, and it is very convenient to use. As long as you can’t think of it, you can’t find it. Recently, there are a few game characters that I like very much. It’s a very practical software. Thank you.',
-  user6: 'LuoEW DENG',
+  user6: 'AustenG517',
   userDesc6: 'Users who have used it for more than half a year（MacBook Pro）',
-  comment6:
-    'It’s really great ^_^, there are handsome guys and beautiful women, almost everything you want, it basically doesn’t take up memory, and it’s very smooth to use',
-  user7: 'YLI ASD quer',
+  comment6: `Excellent Live Wallpaper App without an ounce of Regret
+  My desktop is no longer lifeless. The high-quality live wallpapers (wp/wps) are truly amazing. I can choose among the multiple wps dynamic, static, music, animated, etc. available. Haven't even gotten through half of them and new ones get added with updates. Best of all, it doesn't occupy much resources on my mac. Granted I got the M1 so the performance impact is hardly noticeable. There are other apps out there, but this is the one to get. I purchased this based on the reviews other users who have tried and compared other apps and highly recommend this one. I purchased it and have absolutely no regrets. Enjoy it!`,
+  user7: 'Jogan___r',
   userDesc7: 'Users who have used it for more than half a year（MacBook Air）',
-  comment7:
-    'Although I haven’t used it for a long time, I have longed for live wallpapers. Life is mediocre and busy. Facing a constant computer screen, I lose my passion. Dynamic wallpapers and comfortable music are rare comforts in work.',
+  comment7: `Works well, meh selection window though.
+  It works and it works well. Makes my Macbook feel alive. Honestly works better than Wallpaper Engine. Only negative part is the lack of selections. There's a few pages, and 90% of them are anime or japanese girls, borderline porn too, even after unchecking the cute, anime, and gaming filters to remove them, they still show up. Had to search for an entire hour through every single page and only have about 20 to pick from as of now. Wish there were more.`,
+  user8: `Gio.A1`,
+  userDesc8: `Users who have used it for more than half a year（MacBook Air）`,
+  comment8: `Makes your computer just that much better!
+  I bought this software because on my Windows computer I had "Wallpaper engine" and wanted to have that same dynamic background styling here on my MacBook Pro, I haven't had any issues with it such as lowered battery life or performance reduction due to having this runnning and don't expect my computer to slow down from this at all. Would recommend if your looking to give your computer a more personalized look! 10/10!!!`,
+  user9: `Kon_El`,
+  userDesc9: `Users who have used it for more than half a year（MacBook Air）`,
+  comment9: `Big library but limited search function.
+  I just downloaded this about a week ago and while I do very much enjoy the wallpapers, I've found that I have to go through page by page rather than specific searches such as "Dragonball Z" or "WLOP" (a particular artist I love the work of).
+  Also, some wallpapers have music while others do not. Filtering these into separate categories would be nice too because it can be rather alarming when music suddenly starts playing and I can't initially tell what window or app its coming from.
+  Lastly, the Lite app should be replaced by the upgraded app. I had to manually go in to remove the Lite version after upgrading.`,
   feature1: '2000+ hand-picked videos which are updated every day.',
   feature2:
     'Multiple types of 4K Ultra HD videos, anime, scenery, cute, game, creative, Beauty, Ancient, Movie, etc.',
@@ -103,9 +124,8 @@ export default {
   feature17:
     'Dynamic Wallpaper Engine is designed to provide an interesting experience while consuming as little system resources as possible.',
   about1:
-    'Live wallpaper software was launched in Mac App Store in September 2018 with version v1.0, and it has been more than 5 years since then. During this period, our developers have continued to update and iterate, and the latest version is v15.1.',
+    'Dynamic Wallpaper Engine was launched on the Mac App Store in March 2019 with version 1.0. Over the course of more than four years, our development team has been actively responding to user needs, continuously updating and iterating the software. The current version, v15, is deeply trusted by users both domestically and internationally.',
   about2:
-    'The main functions are: Diverse wallpapers: Dynamic Wallpaper for Mac can provide a variety of wallpaper types, including dynamic scenery, weather and seasonal changes, covering most of the pictures people see in their lives. Each wallpaper is full-screen high-definition, with high aesthetics. Automatic wallpaper replacement: Dynamic Wallpaper for Mac can automatically change the desktop wallpaper according to your time zone, weather, season and other information, so that your desktop will present a natural and vivid effect as time changes. This not only makes Mac computers smarter, but also makes people feel the passage of time. Power saving mode: Dynamic Wallpaper for Mac supports power saving mode, which can automatically turn off the dynamic effect of the screen background to reduce energy consumption, which is conducive to maintaining the standby time and battery life of Mac computers. Easy to use: The operation of Dynamic Wallpaper for Mac is very simple, you only need to select a favorite theme in the application, and you can use it immediately, which is very convenient. It also has an intuitive graphical control panel, and users can change the desktop background without cumbersome operations such as programming or modifying system settings. Intelligent recognition of time: Dynamic Wallpaper for Mac supports intelligent recognition of time and matches the corresponding wallpaper. For example, within a specified time range, it can intelligently switch to a night or day background image. Multiple wallpapers to choose from: Multiple dynamic themes that come with Dynamic Wallpaper for Mac can meet the needs of different groups and users. Users can choose wallpapers from the provided theme drop-down menu, or set their own dynamic pictures in the custom option or download themes shared by others.',
-  about3:
-    'Dynamic Wallpaper for Mac is a powerful, easy-to-use adaptive desktop wallpaper software. According to changes in different time periods, it intelligently adjusts the wallpaper type to bring better visual effects to Mac computers. It is suitable for the needs of many users. It can watch the scenery of nature, and can also record the change of time, making Mac computers more fashionable. If you want to inject new colors into your Mac computer, Dynamic Wallpaper for Mac is definitely the first choice.',
+    "Since its debut, Dynamic Wallpaper Engine has consistently ranked among the top three on the App Store download charts, making it the most popular dynamic wallpaper software for the Mac platform. It offers a diverse range of wallpaper types, each presented in full-screen high definition, with exceptional visual aesthetics. If you're in search of dynamic wallpapers for your Mac, look no further – this is the one.",
+  about3: 'For any inquiries or suggestions, please feel free to contact us at',
 };

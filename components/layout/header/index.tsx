@@ -10,6 +10,7 @@ import {HeaderContainer, LangShowCompent} from './styles';
 import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
+import {SvgIcon} from '@/uikit';
 
 const Header: NextPage = () => {
   const {t} = useTranslation();
@@ -18,8 +19,9 @@ const Header: NextPage = () => {
 
   const staticTitles = [
     {title: t('shouye'), key: '/'},
-    {title: t('gongneng'), key: '/introduce'},
+    // {title: t('gongneng'), key: '/introduce'},
     {title: t('about'), key: '/about'},
+    // {title: t('download'), key: t('downLoadUrl'), target: '_blank'},
   ];
   const [titles, setTitles] = useState(staticTitles);
 
@@ -88,7 +90,7 @@ const Header: NextPage = () => {
                 <Image
                   alt='logo'
                   layout='fill'
-                  src={`/static/image/${currentLang}/headerLogo.png`}
+                  src='/static/image/zh/headerLogo.png'
                 />
               </div>
             </a>
@@ -110,6 +112,11 @@ const Header: NextPage = () => {
           </div>
         </div>
         <div className='right'>
+          <div className='downBtn'>
+            <a href={t('downLoadUrl')} rel='noreferrer' target='_blank'>
+              <SvgIcon height={40} name={`${currentLang}whitedown`} />
+            </a>
+          </div>
           <Dropdown menu={{items}} placement='bottom' trigger={['hover']}>
             <LangShowCompent>
               <div className='imgWrapper'>

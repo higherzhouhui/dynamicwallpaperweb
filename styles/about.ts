@@ -29,17 +29,22 @@ export const AboutContainer = styled.main`
     margin: 24px auto;
     padding: 32px;
     .title {
-      font-size: 19px;
+      font-size: 23px;
       font-weight: bold;
       margin: 12px 0;
       width: fit-content;
       border-bottom: 2px solid;
     }
     .item {
-      font-size: 16px;
-      line-height: 32px;
+      font-size: 19px;
+      line-height: 36px;
       text-indent: 2em;
       margin-bottom: 18px;
     }
+  }
+  .link {
+    color: blue;
+    text-decoration: underline;
+    margin-left: 6px;
   }
 `;

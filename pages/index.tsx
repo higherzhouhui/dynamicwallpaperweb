@@ -1,5 +1,5 @@
 import {LikeOutlined, MessageOutlined, StarOutlined} from '@ant-design/icons';
-import {Avatar, Collapse, CollapseProps, List, Space, Statistic} from 'antd';
+import {Avatar, CollapseProps, List, Space, Statistic} from 'antd';
 import Image from 'next/image';
 import {useRouter} from 'next/router';
 import React, {useEffect, useState} from 'react';
@@ -10,6 +10,7 @@ import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
 import {HomeContainer} from '@/styles/home';
+import {SvgIcon} from '@/uikit';
 
 const Home: NextPage = () => {
   const {t} = useTranslation();
@@ -81,11 +82,11 @@ const Home: NextPage = () => {
   ];
 
   const [gnList, setGnList] = useState(staticList);
-  const dataLength = 7;
+  const dataLength = 9;
   const data = Array.from({length: dataLength}).map((_, i) => ({
     href: '/',
     title: t(`user${i + 1}`),
-    avatar: `/static/image/avatar-icon${Math.min(7, i + 1)}.png`,
+    avatar: `/static/image/avatar-icon${Math.min(9, i + 1)}.png`,
     description: t(`userDesc${i + 1}`),
     content: t(`comment${i + 1}`),
     start: (dataLength - i) * 403 - i * 72,
@@ -102,6 +103,7 @@ const Home: NextPage = () => {
     </Space>
   );
   const handleClickImg = () => {
+    return;
     router.push('/introduce');
   };
   useEffect(() => {
@@ -119,18 +121,17 @@ const Home: NextPage = () => {
           src={`/static/image/${lang}/cover.png`}
         />
         <div className='downWrapper'>
-          <div className='support'>
-            <div className='left'>
-              <p>{t('support')} macOS</p>
-              <p>Monterey 12.X</p>
-            </div>
-            <div className='left'>
-              <p>{t('support')} macOS</p>
-              <p>Ventura 13.X</p>
-            </div>
+          <div className='title'>{t('downTitle')}</div>
+          <div className='slogo'>
+            <div className='color1'>{t('gbdd')}</div>
+            <div className='color2'>{t('ybhp')}</div>
           </div>
-          <a className='downBtn' href={t('downLoadUrl')} target='_bank'>
-            {t('download')}
+          <a href={t('downLoadUrl')} rel='noreferrer' target='_blank'>
+            <SvgIcon
+              className='svgIcon'
+              height={45}
+              name={`${lang}blackdown`}
+            />
           </a>
         </div>
       </div>
@@ -139,7 +140,17 @@ const Home: NextPage = () => {
           <div className='title'>{t('productIntroduce')}</div>
           <div className='produceDesc'>{t('productDesc')}</div>
           <div className='subTitle'>{t('feature')}</div>
-          <Collapse defaultActiveKey={['1']} items={items} />
+          <div className='listWrapper'>
+            {[...Array(17)].map((_, index) => {
+              return (
+                <li className='listItem' key={index}>
+                  {t(`feature${index + 1}`)}
+                </li>
+              );
+            })}
+          </div>
+
+          {/* <Collapse defaultActiveKey={['1']} items={items} /> */}
         </div>
         <div className='gongneng'>
           <div className='title'>{t('gongneng')}</div>
@@ -225,7 +236,12 @@ const Home: NextPage = () => {
                     />,
                   ]}
                   extra={
-                    <a href={t('downLoadUrl')} rel='noreferrer' target='_blank'>
+                    <a
+                      className='extraImg'
+                      href={t('downLoadUrl')}
+                      rel='noreferrer'
+                      target='_blank'
+                    >
                       <img alt='logo' src={item.extraImg} width={272} />
                     </a>
                   }
@@ -247,7 +263,7 @@ const Home: NextPage = () => {
         </div>
         <div className='video'>
           <div className='title'>{t('tiyan')}</div>
-          <video controls width='800'>
+          <video controls preload='auto' width='800'>
             <source src='/static/video/xc.mp4' type='video/mp4' />
             Your browser does not support HTML5 video.
           </video>

@@ -26,7 +26,10 @@ const About: NextPage = () => {
         <div className='title'>{t('gsjj')}</div>
         <div className='item'>{t('about1')}</div>
         <div className='item'>{t('about2')}</div>
-        <div className='item'>{t('about3')}</div>
+        <div className='item'>
+          {t('about3')}
+          <span className='link'>wen646729740@gmail.com</span>
+        </div>
       </div>
     </AboutContainer>
   );

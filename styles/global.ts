@@ -165,4 +165,11 @@ export const GlobalStyle = createGlobalStyle`
             background: #f5f5f5;
         }
     }
+    .extraImg {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+    }
 `;
