@@ -8,7 +8,7 @@ import {FooterContainer} from './styles';
 import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
-import { SvgIcon } from '@/uikit';
+import {SvgIcon} from '@/uikit';
 
 const Footer: NextPage = () => {
   const lang = i18n.language;
