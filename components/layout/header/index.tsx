@@ -20,8 +20,8 @@ const Header: NextPage = () => {
   const staticTitles = [
     {title: t('shouye'), key: '/'},
     // {title: t('gongneng'), key: '/introduce'},
+    {title: t('download'), key: t('downLoadUrl'), target: '_blank'},
     {title: t('about'), key: '/about'},
-    // {title: t('download'), key: t('downLoadUrl'), target: '_blank'},
   ];
   const [titles, setTitles] = useState(staticTitles);
 
@@ -112,11 +112,11 @@ const Header: NextPage = () => {
           </div>
         </div>
         <div className='right'>
-          <div className='downBtn'>
+          {/* <div className='downBtn'>
             <a href={t('downLoadUrl')} rel='noreferrer' target='_blank'>
               <SvgIcon height={40} name={`${currentLang}whitedown`} />
             </a>
-          </div>
+          </div> */}
           <Dropdown menu={{items}} placement='bottom' trigger={['hover']}>
             <LangShowCompent>
               <div className='imgWrapper'>

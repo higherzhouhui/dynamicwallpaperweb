@@ -15,49 +15,34 @@ const Footer: NextPage = () => {
   const {t} = useTranslation();
   const staticList = [
     {
-      href: 'https://apps.apple.com/cn/app/id1453504509?mt=12',
-      logo: '/static/icon/apple.png',
-      title: t('appleZh'),
+      href: 'https://www.jianshu.com/p/1190d89f93fc',
+      logo: '/static/icon/jianshu.png',
+      title: t('简书'),
     },
     {
-      href: 'https://apps.apple.com/app/id1453504509?mt=12',
-      logo: '/static/icon/apple.png',
-      title: t('Mac App Store'),
-    },
-    {
-      href: 'https://cloud.tencent.com/developer/article/2257035',
-      logo: '/static/icon/txy.png',
-      title: t('tengxy'),
-    },
-    {
-      href: 'https://www.google.com.hk/search?q=mac%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8&newwindow=1&ei=MnjQZOy9N5ibptQP4vCo6A8&start=0&sa=N&ved=2ahUKEwjsntvw38mAAxWYjYkEHWI4Cv04FBDy0wN6BAgEEAQ&biw=1920&bih=929&dpr=1#fpstate=ive&vld=cid:e066cdf9,vid:ztww0W6Z3A8',
-      logo: '/static/icon/ytb.png',
-      title: t('YouTube'),
-    },
-    {
-      href: 'https://mac.macsc.com/mac/92.html?id=MzI1OTY2',
-      logo: '/static/icon/macsc.png',
-      title: t('MacSC'),
-    },
-    {
-      href: 'https://macflow.net/p/1087.html',
-      logo: '/static/icon/macflow.png',
-      title: t('MacFlow'),
-    },
-    {
-      href: 'https://xie.infoq.cn/article/bacd52165ed47547509accc1d',
-      logo: '/static/icon/infoq.png',
-      title: t('InfoQ'),
-    },
-    {
-      href: 'https://www.zhihu.com/question/31031913',
+      href: 'https://www.zhihu.com/question/55200110',
       logo: '/static/icon/zhihu.png',
-      title: t('zhihu'),
+      title: t('知乎'),
+    },
+    {
+      href: 'https://www.reddit.com/r/MacOS/comments/njyoql/dynamic_wallpaper_on_mac',
+      logo: '/static/icon/reddit.png',
+      title: t('Reddit'),
+    },
+    {
+      href: 'https://www.bilibili.com/read/cv17270325',
+      logo: '/static/icon/bilibili.png',
+      title: t('Bilibili'),
     },
     {
       href: 'https://sspai.com/post/54035',
       logo: '/static/icon/pi.png',
       title: t('pi'),
+    },
+    {
+      href: 'https://www.google.com.hk/search?q=mac%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8&newwindow=1&ei=MnjQZOy9N5ibptQP4vCo6A8&start=0&sa=N&ved=2ahUKEwjsntvw38mAAxWYjYkEHWI4Cv04FBDy0wN6BAgEEAQ&biw=1920&bih=929&dpr=1#fpstate=ive&vld=cid:e066cdf9,vid:ztww0W6Z3A8',
+      logo: '/static/icon/ytb.png',
+      title: t('YouTube'),
     },
   ];
   const [list, setList] = useState(staticList);
@@ -84,16 +69,6 @@ const Footer: NextPage = () => {
           <div className='desContent'>
             <div className='left'>
               <div className='list'>
-                <div className='item'>
-                  <Link passHref href='/introduce'>
-                    <a className='link'>{t('gongneng')}</a>
-                  </Link>
-                </div>
-                <div className='item'>
-                  <Link passHref href='/about'>
-                    <a className='link'>{t('about')}</a>
-                  </Link>
-                </div>
                 {list.map((item) => {
                   return (
                     <div className='item' key={item.title}>
@@ -109,6 +84,16 @@ const Footer: NextPage = () => {
                     </div>
                   );
                 })}
+                <div className='item'>
+                  <Link passHref href='/introduce'>
+                    <a className='link'>{t('gongneng')}</a>
+                  </Link>
+                </div>
+                <div className='item'>
+                  <Link passHref href='/about'>
+                    <a className='link'>{t('about')}</a>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className='right'>

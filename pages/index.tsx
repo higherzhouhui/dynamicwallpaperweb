@@ -122,10 +122,10 @@ const Home: NextPage = () => {
         />
         <div className='downWrapper'>
           <div className='title'>{t('downTitle')}</div>
-          <div className='slogo'>
+          {/* <div className='slogo'>
             <div className='color1'>{t('gbdd')}</div>
             <div className='color2'>{t('ybhp')}</div>
-          </div>
+          </div> */}
           <a href={t('downLoadUrl')} rel='noreferrer' target='_blank'>
             <SvgIcon
               className='svgIcon'

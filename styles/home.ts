@@ -14,11 +14,10 @@ export const HomeContainer = styled.main`
       top: 0;
       bottom: 0;
       margin: auto;
-      transform: translate(-400px, 0px);
+      transform: translate(-400px, 120px);
       z-index: 9;
       width: fit-content;
       height: fit-content;
-      background: rgba(0, 0, 0, 0.6);
       text-align: center;
       border-radius: 8px;
       color: #eee;
@@ -28,8 +27,12 @@ export const HomeContainer = styled.main`
       }
       .title {
         font-size: 14px;
-        margin-bottom: 12px;
+        margin: 0 auto 12px auto;
         font-weight: bold;
+        background: rgba(0, 0, 0, 0.6);
+        width: fit-content;
+        padding: 5px;
+        border-radius: 4px;
       }
       .slogo {
         display: grid;

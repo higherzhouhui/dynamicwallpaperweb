@@ -12,7 +12,7 @@ export default {
   wecff: '无二次付费',
   gongneng: '功能介绍',
   about: '关于我们',
-  download: '立即下载',
+  download: '下载',
   support: '支持',
   shouqi: '收起',
   discover: '发现更多',
