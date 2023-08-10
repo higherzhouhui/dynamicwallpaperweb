@@ -120,6 +120,16 @@ export const HomeContainer = styled.main`
       width: fit-content;
       border-bottom: 1px solid #999;
       color: #666;
+      display: flex;
+      align-items: center;
+      &::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: #333;
+        border-radius: 50%;
+        margin-right: 6px;
+      }
       &:hover {
         background: #f5f5f5;
         color: #000;
