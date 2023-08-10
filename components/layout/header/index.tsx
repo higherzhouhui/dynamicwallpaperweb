@@ -10,7 +10,6 @@ import {HeaderContainer, LangShowCompent} from './styles';
 import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
-import {SvgIcon} from '@/uikit';
 
 const Header: NextPage = () => {
   const {t} = useTranslation();
