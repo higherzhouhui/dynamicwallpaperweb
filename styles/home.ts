@@ -23,11 +23,11 @@ export const HomeContainer = styled.main`
       color: #eee;
       padding: 3px 10px;
       @media screen and (max-width: 1440px) {
-        transform: translate(-300px, 0px);
+        transform: translate(-300px, 80px);
       }
       .title {
-        font-size: 14px;
-        margin: 0 auto 12px auto;
+        font-size: 15px;
+        margin: 0 auto 18px auto;
         font-weight: bold;
         background: rgba(0, 0, 0, 0.6);
         width: fit-content;

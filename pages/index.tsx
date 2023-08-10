@@ -129,7 +129,7 @@ const Home: NextPage = () => {
           <a href={t('downLoadUrl')} rel='noreferrer' target='_blank'>
             <SvgIcon
               className='svgIcon'
-              height={45}
+              height={50}
               name={`${lang}blackdown`}
             />
           </a>
