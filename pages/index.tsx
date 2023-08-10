@@ -92,7 +92,7 @@ const Home: NextPage = () => {
     start: (dataLength - i) * 403 - i * 72,
     good: (dataLength - i) * 231 - i * 33,
     comment: Math.max((dataLength - i) * 12 - i * 4, i),
-    extraImg: `/static/image/comment${Math.min(5, i + 1)}.png`,
+    extraImg: `/static/image/comment${Math.min(9, i + 1)}.png`,
   }));
 
   // eslint-disable-next-line react/no-unstable-nested-components
@@ -242,7 +242,15 @@ const Home: NextPage = () => {
                       rel='noreferrer'
                       target='_blank'
                     >
-                      <img alt='logo' src={item.extraImg} width={272} />
+                      <div className='imgWrapper'>
+                        <Image
+                          alt='gongneng'
+                          blurDataURL='/static/image/blur.png'
+                          layout='fill'
+                          placeholder='blur'
+                          src={item.extraImg}
+                        />
+                      </div>
                     </a>
                   }
                   key={item.title}

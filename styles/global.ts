@@ -169,8 +169,13 @@ export const GlobalStyle = createGlobalStyle`
         display: flex;
         align-items: center;
         height: 100%;
-        border-radius: 8px;
-        overflow: hidden;
+        .imgWrapper {
+            position: relative;
+            height: 153px;
+            width: 272px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
     }
     #nprogress .bar {
         background: #fff;
