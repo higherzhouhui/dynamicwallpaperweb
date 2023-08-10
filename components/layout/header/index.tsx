@@ -102,7 +102,7 @@ const Header: NextPage = () => {
                     className={`title ${
                       router.pathname === item.key ? 'active' : ''
                     }`}
-                    target='_blank'
+                    target={item.target}
                   >
                     {item.title}
                   </a>
