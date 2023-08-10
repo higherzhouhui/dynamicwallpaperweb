@@ -98,6 +98,8 @@ export const HomeContainer = styled.main`
     width: 1100px;
     margin: 20px auto 0 auto;
     padding: 0 0 40px 0;
+    position: relative;
+    z-index: 9;
     .title {
       text-align: center;
       font-size: 24px;

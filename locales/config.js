@@ -13,10 +13,17 @@ const resources = {
 };
 
 const getInitLng = () => {
+  let lang = 'zh';
   if (typeof window !== 'undefined') {
-    return localStorage.getItem('lang') || 'zh';
+    const localLang = localStorage.getItem('lang');
+    if (localLang) {
+      lang = localLang;
+    } else if (!(navigator?.language || '').includes('zh')) {
+      lang = 'en';
+    }
+    return lang;
   }
-  return 'zh';
+  return lang;
 };
 
 i18n.use(initReactI18next).init({

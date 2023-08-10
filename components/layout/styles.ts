@@ -14,4 +14,9 @@ export const LayoutMainContentContainer = styled.div`
 
 export const LayoutListContentContainer = styled.div`
   width: 100%;
+  .canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 `;

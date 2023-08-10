@@ -28,6 +28,7 @@ export const AboutContainer = styled.main`
     border-radius: 8px;
     margin: 24px auto;
     padding: 32px;
+    position: relative;
     .title {
       font-size: 23px;
       font-weight: bold;
