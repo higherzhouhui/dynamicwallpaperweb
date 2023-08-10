@@ -61,7 +61,7 @@ const Footer: NextPage = () => {
                 <Image
                   alt='logo'
                   layout='fill'
-                  src={`/static/image/${lang}/headerLogo.png`}
+                  src='/static/image/zh/headerLogo.png'
                 />
               </div>
             </a>
