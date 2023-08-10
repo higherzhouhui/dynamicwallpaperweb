@@ -172,4 +172,7 @@ export const GlobalStyle = createGlobalStyle`
         border-radius: 8px;
         overflow: hidden;
     }
+    #nprogress .bar {
+        background: #fff;
+    }
 `;

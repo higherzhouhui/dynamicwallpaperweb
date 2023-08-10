@@ -6,9 +6,9 @@ export const HeaderContainer = styled.header`
   top: 0;
   width: 100%;
   height: 60px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
   z-index: 999;
-  background: #fff;
+  background: #1d1d1d;
   .content {
     width: 1100px;
     height: 100%;
@@ -20,10 +20,21 @@ export const HeaderContainer = styled.header`
     .left {
       display: flex;
       align-items: center;
+      .logoCon {
+        display: flex;
+        align-items: center;
+        width: 450px;
+        span {
+          font-size: 18px;
+          font-weight: bold;
+          color: #fff;
+        }
+      }
       .logoWrapper {
         position: relative;
-        width: 400px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
+        margin-right: 4px;
       }
       .titles {
         margin-left: 60px;
@@ -32,20 +43,20 @@ export const HeaderContainer = styled.header`
           margin-right: 58px;
           font-size: 18px;
           cursor: pointer;
-          color: #000;
+          color: #fff;
           font-weight: bold;
           border-bottom: 2px solid transparent;
           &:hover {
-            color: #ef443b;
-            border-bottom: 2px solid #ef443b;
+            color: #3cef3b;
+            border-bottom: 2px solid #3cef3b;
           }
         }
         .title:last-child {
           margin-right: 0;
         }
         .active {
-          color: #ef443b;
-          border-bottom: 2px solid #ef443b;
+          color: #3cef3b;
+          border-bottom: 2px solid #3cef3b;
         }
       }
     }
@@ -69,5 +80,6 @@ export const LangShowCompent = styled.div`
   .lang {
     margin-left: 6px;
     font-size: 15px;
+    color: #fff;
   }
 `;

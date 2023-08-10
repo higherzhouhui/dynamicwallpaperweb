@@ -84,14 +84,11 @@ const Header: NextPage = () => {
       <div className='content'>
         <div className='left'>
           <Link passHref href='/'>
-            <a>
+            <a className='logoCon'>
               <div className='logoWrapper'>
-                <Image
-                  alt='logo'
-                  layout='fill'
-                  src='/static/image/zh/headerLogo.png'
-                />
+                <Image alt='logo' layout='fill' src='/static/image/logo.png' />
               </div>
+              <span>Dynamic Wallpaper Engine for Mac</span>
             </a>
           </Link>
           <div className='titles'>
