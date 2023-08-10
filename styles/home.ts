@@ -128,7 +128,7 @@ export const HomeContainer = styled.main`
         height: 6px;
         background: #333;
         border-radius: 50%;
-        margin-right: 6px;
+        margin-right: 12px;
       }
       &:hover {
         background: #f5f5f5;
