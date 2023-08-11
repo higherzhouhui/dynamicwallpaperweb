@@ -8,6 +8,7 @@ import {FooterContainer} from './styles';
 import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
+import {clickDownRequest} from '@/services/common';
 import {SvgIcon} from '@/uikit';
 
 const Footer: NextPage = () => {
@@ -45,6 +46,10 @@ const Footer: NextPage = () => {
       title: t('YouTube'),
     },
   ];
+
+  const handleTongji = () => {
+    clickDownRequest({uuid: localStorage.getItem('uuid') || ''});
+  };
   const [list, setList] = useState(staticList);
   useEffect(() => {
     setList(staticList);
@@ -102,6 +107,9 @@ const Footer: NextPage = () => {
                 href={t('downLoadUrl')}
                 rel='noreferrer'
                 target='_blank'
+                onClick={() => {
+                  handleTongji();
+                }}
               >
                 <SvgIcon height={50} name={`${lang}blackdown`} />
               </a>

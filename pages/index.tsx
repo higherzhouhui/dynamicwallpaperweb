@@ -9,6 +9,7 @@ import {useTranslation} from 'react-i18next';
 import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
+import {clickDownRequest} from '@/services/common';
 import {HomeContainer} from '@/styles/home';
 import {SvgIcon} from '@/uikit';
 
@@ -102,10 +103,13 @@ const Home: NextPage = () => {
       {text}
     </Space>
   );
-  const handleClickImg = () => {
-    return;
-    router.push('/introduce');
+
+  const handleTongji = () => {
+    clickDownRequest({uuid: localStorage.getItem('uuid') || ''});
   };
+
+  const handleClickImg = () => {};
+
   useEffect(() => {
     setGnList(staticList);
   }, [lang]);
@@ -126,7 +130,14 @@ const Home: NextPage = () => {
             <div className='color1'>{t('gbdd')}</div>
             <div className='color2'>{t('ybhp')}</div>
           </div> */}
-          <a href={t('downLoadUrl')} rel='noreferrer' target='_blank'>
+          <a
+            href={t('downLoadUrl')}
+            rel='noreferrer'
+            target='_blank'
+            onClick={() => {
+              handleTongji();
+            }}
+          >
             <SvgIcon
               className='svgIcon'
               height={50}
@@ -241,6 +252,9 @@ const Home: NextPage = () => {
                       href={t('downLoadUrl')}
                       rel='noreferrer'
                       target='_blank'
+                      onClick={() => {
+                        handleTongji();
+                      }}
                     >
                       <div className='imgWrapper'>
                         <Image

@@ -83,13 +83,13 @@ export const GlobalStyle = createGlobalStyle`
     .themeColor {
       background: #F5F8FB;
     }
-    .ant-table-cell {
+    /* .ant-table-cell {
         background: rgb(182 191 216)!important;
         color: #2a2323!important;
     }
     .ant-table-column-title {
         color: #2a2323!important;
-    }
+    } */
    
     .loading {
 		position: relative;

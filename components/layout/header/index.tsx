@@ -10,6 +10,7 @@ import {HeaderContainer, LangShowCompent} from './styles';
 import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
+import { clickDownRequest } from '@/services/common';
 
 const Header: NextPage = () => {
   const {t} = useTranslation();
@@ -19,7 +20,7 @@ const Header: NextPage = () => {
   const staticTitles = [
     {title: t('shouye'), key: '/'},
     // {title: t('gongneng'), key: '/introduce'},
-    {title: t('download'), key: t('downLoadUrl'), target: '_blank'},
+    {title: t('download'), key: t('downLoadUrl'), target: '_blank', down: true},
     {title: t('about'), key: '/about'},
   ];
   const [titles, setTitles] = useState(staticTitles);
@@ -28,6 +29,12 @@ const Header: NextPage = () => {
     localStorage.setItem('lang', lang);
     setCurrentLang(lang);
     i18n.changeLanguage(lang);
+  };
+
+  const handleTongji = (item: any) => {
+    if (item.down) {
+      clickDownRequest({uuid: localStorage.getItem('uuid') || ''});
+    }
   };
 
   useEffect(() => {
@@ -100,6 +107,7 @@ const Header: NextPage = () => {
                       router.pathname === item.key ? 'active' : ''
                     }`}
                     target={item.target}
+                    onClick={() => handleTongji(item)}
                   >
                     {item.title}
                   </a>

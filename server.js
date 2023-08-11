@@ -3,10 +3,10 @@ const {createProxyMiddleware} = require('http-proxy-middleware');
 const next = require('next');
 
 const devProxy = {
-  '/fina': {
-    target: 'http://20.205.136.171',
+  '/api1': {
+    target: 'http://127.0.0.1:8900',
     pathRewrite: {
-      '^/fina': '/',
+      '^/api1': '/',
     },
     changeOrigin: true,
   },

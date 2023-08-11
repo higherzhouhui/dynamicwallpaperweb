@@ -121,3 +121,25 @@ export const IntroduceSwiper = styled.div`
     z-index: 8;
   }
 `;
+
+export const AdminContainer = styled.main`
+  position: relative;
+  margin: 24px;
+  h1 {
+    margin: 12px 0;
+    text-align: center;
+    font-size: 18px;
+  }
+  .timeWrapper {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 12px 0;
+    .time {
+      margin-right: 12px;
+    }
+    button {
+      margin-left: 12px;
+    }
+  }
+`;
