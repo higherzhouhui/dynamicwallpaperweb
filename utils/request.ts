@@ -21,10 +21,9 @@ const handleError = (res: any) => {
     content: res?.statusText || 'Network error',
   });
 };
-
 // 创建请求实例
 const instance = axios.create({
-  baseURL: 'https://127.0.0.1:8900',
+  baseURL: process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:8900' : '',
   timeout: 500000,
   headers: {
     'Content-Type': 'application/json;charset=UTF-8',
