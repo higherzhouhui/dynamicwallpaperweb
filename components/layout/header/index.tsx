@@ -10,7 +10,7 @@ import {HeaderContainer, LangShowCompent} from './styles';
 import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
-import { clickDownRequest } from '@/services/common';
+import {clickDownRequest} from '@/services/common';
 
 const Header: NextPage = () => {
   const {t} = useTranslation();
@@ -107,7 +107,9 @@ const Header: NextPage = () => {
                       router.pathname === item.key ? 'active' : ''
                     }`}
                     target={item.target}
-                    onClick={() => handleTongji(item)}
+                    onClick={() => {
+                      handleTongji(item);
+                    }}
                   >
                     {item.title}
                   </a>
