@@ -286,10 +286,7 @@ const Home: NextPage = () => {
         <div className='video'>
           <div className='title'>{t('tiyan')}</div>
           <video controls preload='auto' width='800'>
-            <source
-              src='http://47.242.238.31/files/video/shouye/xc.mp4'
-              type='video/mp4'
-            />
+            <source src='/static/video/xc.mp4' type='video/mp4' />
             Your browser does not support HTML5 video.
           </video>
         </div>
