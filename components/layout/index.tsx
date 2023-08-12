@@ -80,7 +80,7 @@ export const Layout = memo(({children}) => {
           <ListLayout>{children}</ListLayout>
         </LayoutMainContentContainer>
       </LayoutContainer>
-      <Footer />
+      {router.pathname !== '/admin' && <Footer />}
     </>
   );
 });

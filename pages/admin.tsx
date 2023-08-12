@@ -1,4 +1,5 @@
-import {Button, DatePicker, Table} from 'antd';
+import {Button, DatePicker, Table, TablePaginationConfig} from 'antd';
+import moment from 'moment';
 import {useState, useEffect} from 'react';
 
 import type {NextPage} from 'next';
@@ -16,7 +17,15 @@ const Introduce: NextPage = () => {
   const [startTime, setStartTime] = useState<any>();
   const [endTime, setEndTime] = useState<any>();
   const [loading, setLoading] = useState(true);
+  const [totalLogin, setTotalLogin] = useState(0);
+  const [totalClick, setTotalClick] = useState(0);
   const columns = [
+    {
+      title: '编号',
+      dataIndex: 'index',
+      key: 'index',
+      width: 50,
+    },
     {
       title: '设备ID',
       dataIndex: 'uuid',
@@ -69,6 +78,11 @@ const Introduce: NextPage = () => {
     }, 10);
   };
 
+  const handleChangePage = (e: TablePaginationConfig) => {
+    setPageNum(e.current || 1);
+    setPageSize(e.pageSize || 10);
+  };
+
   const getInitData = () => {
     setLoading(true);
     getDataRequest({
@@ -78,13 +92,24 @@ const Introduce: NextPage = () => {
       pageSize,
     }).then((res: any) => {
       setLoading(false);
+      let tempLogin = 0;
+      let tempClick = 0;
       if (res.code === 200) {
-        res.data.list.forEach((item: any) => {
-          item.comeTime = `${new Date(item.comeTime)}`;
+        res.data.list.forEach((item: any, index: number) => {
+          item.comeTime = moment(new Date(item.comeTime)).format(
+            'YYYY-MM-DD HH:mm:ss'
+          );
+          item.index = index + 1 + (pageNum - 1) * pageSize;
           if (item.leaveTime) {
-            item.leaveTime = `${new Date(item.leaveTime)}`;
+            item.leaveTime = moment(new Date(item.leaveTime)).format(
+              'YYYY-MM-DD HH:mm:ss'
+            );
           }
+          tempLogin += item.loginNum;
+          tempClick += item.clickNum;
         });
+        setTotalLogin(tempLogin);
+        setTotalClick(tempClick);
         setList(res.data.list);
         settotal(res.data.totalSize);
       }
@@ -93,7 +118,7 @@ const Introduce: NextPage = () => {
 
   useEffect(() => {
     getInitData();
-  }, []);
+  }, [pageNum, pageSize]);
   return (
     <AdminContainer>
       <h1>网站统计</h1>
@@ -124,13 +149,40 @@ const Introduce: NextPage = () => {
         columns={columns}
         dataSource={list}
         loading={loading}
-        pagination={{pageSize, current: pageNum}}
-        rowKey='uuid'
+        pagination={{
+          pageSize,
+          total,
+          current: pageNum,
+          showQuickJumper: true,
+          showSizeChanger: true,
+        }}
+        rowKey='id'
         scroll={{
           x: 1500,
           y: 600,
         }}
         size='small'
+        summary={() => (
+          <Table.Summary fixed>
+            <Table.Summary.Row>
+              <Table.Summary.Cell index={0} />
+              <Table.Summary.Cell index={1}>合计</Table.Summary.Cell>
+              <Table.Summary.Cell index={2} />
+              <Table.Summary.Cell index={3} />
+              <Table.Summary.Cell index={4} />
+              <Table.Summary.Cell index={5} />
+              <Table.Summary.Cell index={6}>
+                <span style={{color: 'red'}}>{totalLogin}</span>
+              </Table.Summary.Cell>
+              <Table.Summary.Cell index={6}>
+                <span style={{color: 'red'}}>{totalClick}</span>
+              </Table.Summary.Cell>
+            </Table.Summary.Row>
+          </Table.Summary>
+        )}
+        onChange={(e) => {
+          handleChangePage(e);
+        }}
       />
     </AdminContainer>
   );
