@@ -155,6 +155,7 @@ const Introduce: NextPage = () => {
           current: pageNum,
           showQuickJumper: true,
           showSizeChanger: true,
+          pageSizeOptions: [20, 50, 300, 1000],
         }}
         rowKey='id'
         scroll={{
