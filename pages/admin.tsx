@@ -88,7 +88,7 @@ const Introduce: NextPage = () => {
     let deviceType = 'PC';
     let osType = 'Unknown';
 
-    const userAgent = navigator.userAgent || '';
+    const userAgent = type || '';
 
     if (/mobile/i.test(userAgent)) {
       deviceType = 'Mobile';
