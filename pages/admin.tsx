@@ -1,4 +1,4 @@
-import {Button, DatePicker, Table, TablePaginationConfig} from 'antd';
+import {Button, DatePicker, Table, TablePaginationConfig, Tag} from 'antd';
 import moment from 'moment';
 import {useState, useEffect} from 'react';
 
@@ -12,13 +12,14 @@ const {RangePicker} = DatePicker;
 const Introduce: NextPage = () => {
   const [list, setList] = useState([]);
   const [pageNum, setPageNum] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(50);
   const [total, settotal] = useState(0);
   const [startTime, setStartTime] = useState<any>();
   const [endTime, setEndTime] = useState<any>();
   const [loading, setLoading] = useState(true);
   const [totalLogin, setTotalLogin] = useState(0);
   const [totalClick, setTotalClick] = useState(0);
+  const [obj, setObj] = useState({totalClick: 0, totalLogin: 0});
   const columns = [
     {
       title: '编号',
@@ -32,8 +33,8 @@ const Introduce: NextPage = () => {
       key: 'uuid',
     },
     {
-      title: '使用设备',
-      dataIndex: 'shebei',
+      title: '设备型号',
+      dataIndex: 'device',
       key: 'shebei',
     },
     {
@@ -53,13 +54,13 @@ const Introduce: NextPage = () => {
       key: 'leaveTime',
     },
     {
-      title: '总共访问次数',
+      title: '累计访问次数',
       dataIndex: 'loginNum',
       key: 'loginNum',
       width: 110,
     },
     {
-      title: '跳转APP下载次数',
+      title: '点击下载次数',
       dataIndex: 'clickNum',
       key: 'clickNum',
       width: 130,
@@ -80,7 +81,25 @@ const Introduce: NextPage = () => {
 
   const handleChangePage = (e: TablePaginationConfig) => {
     setPageNum(e.current || 1);
-    setPageSize(e.pageSize || 10);
+    setPageSize(e.pageSize || 50);
+  };
+
+  const getDeviceType = (type: string) => {
+    let deviceType = 'PC';
+    let osType = 'Unknown';
+
+    const userAgent = navigator.userAgent || '';
+
+    if (/mobile/i.test(userAgent)) {
+      deviceType = 'Mobile';
+    }
+
+    if (/windows/i.test(userAgent)) {
+      osType = 'Windows';
+    } else if (/mac os x/i.test(userAgent)) {
+      osType = 'iOS';
+    }
+    return `${deviceType}-${osType}`;
   };
 
   const getInitData = () => {
@@ -105,6 +124,7 @@ const Introduce: NextPage = () => {
               'YYYY-MM-DD HH:mm:ss'
             );
           }
+          item.device = getDeviceType(item.shebei);
           tempLogin += item.loginNum;
           tempClick += item.clickNum;
         });
@@ -112,6 +132,10 @@ const Introduce: NextPage = () => {
         setTotalClick(tempClick);
         setList(res.data.list);
         settotal(res.data.totalSize);
+        setObj({
+          totalClick: res.data.totalClick,
+          totalLogin: res.data.totalLogin,
+        });
       }
     });
   };
@@ -142,9 +166,17 @@ const Introduce: NextPage = () => {
         >
           刷新
         </Button>
+        <Tag color='success' style={{margin: '0 16px'}}>
+          总设备：{total}
+        </Tag>
+        <Tag color='error'>总访问次数：{obj.totalLogin}</Tag>
+        <Tag color='processing' style={{marginLeft: '16px'}}>
+          总点击下载次数：{obj.totalClick}
+        </Tag>
       </div>
 
       <Table
+        bordered
         sticky
         columns={columns}
         dataSource={list}
@@ -155,7 +187,7 @@ const Introduce: NextPage = () => {
           current: pageNum,
           showQuickJumper: true,
           showSizeChanger: true,
-          pageSizeOptions: [20, 50, 300, 1000],
+          pageSizeOptions: [50, 300, 500, 1000, 2000],
         }}
         rowKey='id'
         scroll={{
@@ -167,7 +199,7 @@ const Introduce: NextPage = () => {
           <Table.Summary fixed>
             <Table.Summary.Row>
               <Table.Summary.Cell index={0} />
-              <Table.Summary.Cell index={1}>合计</Table.Summary.Cell>
+              <Table.Summary.Cell index={1}>当前页合计</Table.Summary.Cell>
               <Table.Summary.Cell index={2} />
               <Table.Summary.Cell index={3} />
               <Table.Summary.Cell index={4} />

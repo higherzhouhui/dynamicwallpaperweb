@@ -4,7 +4,7 @@ export const LayoutContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 60px);
+  min-height: 100vh;
   padding-top: 60px;
   background: #f5f5f5;
 `;
