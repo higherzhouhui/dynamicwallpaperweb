@@ -97,7 +97,7 @@ const Introduce: NextPage = () => {
     if (/windows/i.test(userAgent)) {
       osType = 'Windows';
     } else if (/mac os x/i.test(userAgent)) {
-      osType = 'iOS';
+      osType = 'macOS';
     }
     return `${deviceType}-${osType}`;
   };
