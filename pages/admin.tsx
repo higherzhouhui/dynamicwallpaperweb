@@ -86,7 +86,7 @@ const Introduce: NextPage = () => {
 
   const getDeviceType = (type: string) => {
     let deviceType = 'PC';
-    let osType = 'Android';
+    let osType = 'Unknown';
 
     const userAgent = type || '';
 
