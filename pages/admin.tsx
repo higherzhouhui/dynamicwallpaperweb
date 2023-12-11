@@ -67,7 +67,7 @@ const Introduce: NextPage = () => {
     },
   ];
   const handleOnchange = (e: any) => {
-    if (e.length === 2) {
+    if (e && e.length === 2) {
       setStartTime(new Date(e[0]).getTime());
       setEndTime(new Date(e[1]).getTime());
     } else {
@@ -164,7 +164,7 @@ const Introduce: NextPage = () => {
             getInitData();
           }}
         >
-          刷新
+          搜索
         </Button>
         <Tag color='success' style={{margin: '0 16px'}}>
           总设备：{total}
