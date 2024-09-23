@@ -5,7 +5,7 @@ export interface BaseData {
   comeTime?: number;
   leaveTime?: number;
   uuid: string;
-  originUrl: string;
+  originUrl?: string;
 }
 
 export interface SelectTime {
