@@ -29,6 +29,9 @@ export const AboutContainer = styled.main`
     margin: 24px auto;
     padding: 32px;
     position: relative;
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+    }
     .title {
       font-size: 23px;
       font-weight: bold;

@@ -26,7 +26,7 @@ export const HomeContainer = styled.main`
         transform: translate(-300px, 80px);
       }
       .title {
-        font-size: 15px;
+        font-size: 1rem;
         margin: 0 auto 18px auto;
         font-weight: bold;
         background: rgba(0, 0, 0, 0.6);
@@ -39,12 +39,9 @@ export const HomeContainer = styled.main`
         grid-template-columns: repeat(2, 1fr);
         justify-content: space-between;
         div {
-          font-size: 18px;
+          font-size: 1.2rem;
           font-weight: bold;
           margin-bottom: 24px;
-          @media screen and (max-width: 1440px) {
-            font-size: 15px;
-          }
         }
         .color1 {
           color: #007aff;
@@ -70,7 +67,7 @@ export const HomeContainer = styled.main`
           padding: 6px 12px;
           border-radius: 18px;
           p {
-            font-size: 13px;
+            font-size: 0.8rem;
           }
         }
         .left:last-child {
@@ -84,7 +81,7 @@ export const HomeContainer = styled.main`
       width: 150px;
       height: 50px;
       border-radius: 30px;
-      font-size: 18px;
+      font-size: 1.2rem;
       text-align: center;
       line-height: 50px;
       background: #ef443b;
@@ -103,9 +100,12 @@ export const HomeContainer = styled.main`
     padding: 0 0 40px 0;
     position: relative;
     z-index: 9;
+    @media (max-width: 1100px) {
+      width: 100%;
+    }
     .title {
       text-align: center;
-      font-size: 24px;
+      font-size: 1.8rem;
       font-weight: bold;
       line-height: 36px;
       margin: 18px 0;
@@ -114,7 +114,7 @@ export const HomeContainer = styled.main`
     }
     .listItem {
       list-style: inside;
-      font-size: 16px;
+      font-size: 1.1rem;
       line-height: 28px;
       margin: 12px 0;
       width: fit-content;
@@ -129,6 +129,7 @@ export const HomeContainer = styled.main`
         background: #333;
         border-radius: 50%;
         margin-right: 12px;
+        min-width: 6px;
       }
       &:hover {
         background: #f5f5f5;
@@ -173,6 +174,9 @@ export const HomeContainer = styled.main`
     .content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      @media (max-width: 1100px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
       column-gap: 18px;
       row-gap: 18px;
       transition: all 0.5s;
@@ -198,7 +202,7 @@ export const HomeContainer = styled.main`
         .desc {
           width: 100%;
           padding: 18px 12px;
-          font-size: 15px;
+          font-size: 1rem;
           font-weight: 500;
           font-style: italic;
         }
@@ -206,14 +210,14 @@ export const HomeContainer = styled.main`
     }
     .lookMore {
       margin: 24px auto 0 auto;
-      font-size: 16px;
+      font-size: 1rem;
       display: flex;
       justify-content: center;
       color: #007aff;
       align-items: center;
       width: fit-content;
       padding: 6px 12px;
-      border-radius: 16px;
+      border-radius: 1rem;
       cursor: pointer;
       border: 1px solid #007aff;
       .imgWrapper {
@@ -246,6 +250,8 @@ export const HomeContainer = styled.main`
     .Statistic {
       display: flex;
       justify-content: center;
+      align-items: center;
+      font-family: 'fangsong';
     }
   }
   .video {
@@ -254,6 +260,12 @@ export const HomeContainer = styled.main`
     border-radius: 8px;
     margin-top: 18px;
     text-align: center;
+    video {
+      width: 800px;
+      @media (max-width: 1100px) {
+        width: 100%;
+      }
+    }
   }
 `;
 
@@ -386,7 +398,7 @@ export const SwipperItem = styled.div`
   .hint {
     margin-top: 36px;
     .title {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: bold;
       color: #fff;
       margin-bottom: 6px;
@@ -394,7 +406,7 @@ export const SwipperItem = styled.div`
     .list {
       color: #fff;
       opacity: 0.9;
-      font-size: 15px;
+      font-size: 1rem;
       line-height: 26px;
     }
   }

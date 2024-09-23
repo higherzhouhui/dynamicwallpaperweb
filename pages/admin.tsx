@@ -36,6 +36,12 @@ const Introduce: NextPage = () => {
       title: '设备型号',
       dataIndex: 'device',
       key: 'shebei',
+      width: 150,
+    },
+    {
+      title: '渠道',
+      dataIndex: 'originUrl',
+      key: 'originUrl',
     },
     {
       title: '语言',
@@ -44,20 +50,20 @@ const Introduce: NextPage = () => {
       width: 100,
     },
     {
-      title: '最近一次访问时间',
+      title: '访问时间',
       dataIndex: 'comeTime',
       key: 'comeTime',
     },
     {
-      title: '最后一次离开时间',
+      title: '离开时间',
       dataIndex: 'leaveTime',
       key: 'leaveTime',
     },
     {
-      title: '累计访问次数',
+      title: '访问次数',
       dataIndex: 'loginNum',
       key: 'loginNum',
-      width: 110,
+      width: 120,
     },
     {
       title: '点击下载次数',

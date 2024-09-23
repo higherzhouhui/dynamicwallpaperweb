@@ -5,11 +5,16 @@ export const FooterContainer = styled.footer`
     width: 100%;
     position: relative;
     height: 0;
-    min-width: 1100px;
     overflow: hidden;
     padding-bottom: 30%;
     @media screen and (min-width: 1440px) {
       padding-bottom: 27%;
+    }
+    @media screen and (max-width: 1100px) {
+      padding-bottom: 80%;
+      .content {
+        width: 100%;
+      }
     }
   }
   .content {
@@ -40,7 +45,7 @@ export const FooterContainer = styled.footer`
         }
         .link {
           color: #ddd;
-          font-size: 15px;
+          font-size: 0.9rem;
           background: rgba(0, 0, 0, 0.6);
           width: fit-content;
           padding: 6px 12px;
@@ -84,7 +89,7 @@ export const FooterContainer = styled.footer`
       }
     }
     .text {
-      font-size: 17px;
+      font-size: 1rem;
       color: #fff;
       font-weight: bold;
     }
@@ -100,7 +105,7 @@ export const FooterContainer = styled.footer`
       justify-content: space-between;
       .item {
         color: #eee;
-        font-size: 15px;
+        font-size: 0.9rem;
         background: rgba(0, 0, 0, 0.7);
         width: fit-content;
         padding: 6px 12px;
@@ -117,13 +122,13 @@ export const FooterContainer = styled.footer`
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
-    font-size: 16px;
+    font-size: 0.9rem;
     line-height: 38px;
     display: flex;
     justify-content: center;
     a {
       color: #fff;
-      font-size: 16px;
+      font-size: 0.9rem;
       &:hover {
         color: #8d93e1;
       }

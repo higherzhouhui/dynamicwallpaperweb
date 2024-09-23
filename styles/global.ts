@@ -1,25 +1,25 @@
 import {createGlobalStyle} from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+    html {
+        font-size: 12px;
+        @media screen and (min-width: 1100px) {
+            font-size: 16px;
+        }
+    }
     font-display: auto;
     @font-face {
         font-family: 'HarmonyOs-Regular';
-        src: url('/static/font/HarmonyOS_Sans_Regular.ttf');
+        src: url('/static/font/AlimamaAgileVF-Thin.ttf');
     }
     body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, input, p, form, a, textarea, header, footer, main {
         margin: 0;
         padding: 0;
-        font-size: 12px; 
+        font-size: 1rem;
         font-family: HarmonyOs-Regular;
         box-sizing: border-box;
     }
-    html, body{
-        width: 100%;
-        height: 100%;
-        max-width: 100vw;
-        min-width: 1100px;
-    }
-    
+ 
     ol, ul, li {
         list-style: none;
     }
@@ -179,5 +179,10 @@ export const GlobalStyle = createGlobalStyle`
     }
     #nprogress .bar {
         background: #fff;
+    }
+    .ant-list-item {
+        @media (max-width: 1100px) {
+            flex-direction: column;
+        }
     }
 `;

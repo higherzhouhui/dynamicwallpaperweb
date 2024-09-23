@@ -3,10 +3,10 @@ const {createProxyMiddleware} = require('http-proxy-middleware');
 const next = require('next');
 
 const devProxy = {
-  '/api1': {
+  '/api': {
     target: 'http://127.0.0.1:8900',
     pathRewrite: {
-      '^/api1': '/',
+      '^/api': '/',
     },
     changeOrigin: true,
   },

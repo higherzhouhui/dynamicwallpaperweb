@@ -201,15 +201,11 @@ const Home: NextPage = () => {
         <div className='user'>
           {lang === 'zh' ? (
             <div className='title Statistic'>
-              <span>深受超过</span>
-              <Statistic formatter={formatter} precision={2} value={1549985} />
-              <span>位国内外用户的信赖</span>
+              深受超过 3,784,575 位用户的信赖
             </div>
           ) : (
             <div className='title Statistic'>
-              <span>Deeply surpassed</span>
-              <Statistic formatter={formatter} precision={2} value={1549985} />
-              <span>Trusted by users at home and abroad</span>
+              Deeply surpassed 3,784,575 Trusted by users
             </div>
           )}
 
@@ -285,7 +281,7 @@ const Home: NextPage = () => {
         </div>
         <div className='video'>
           <div className='title'>{t('tiyan')}</div>
-          <video controls preload='auto' width='800'>
+          <video controls preload='auto'>
             <source src='/static/video/xc.mp4' type='video/mp4' />
             Your browser does not support HTML5 video.
           </video>

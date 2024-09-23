@@ -39,7 +39,6 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <meta name='baidu-site-verification' content='codeva-wtSOk92344' />
           <meta
             content='Dynamic Wallpaper,Live Wallpaper,Wallpaper Engine,Screen Saver,Backgrounds,Irvue'
             name='description'

@@ -9,6 +9,7 @@ export const HeaderContainer = styled.header`
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
   z-index: 999;
   background: #1d1d1d;
+  max-width: 100vw;
   .content {
     width: 1100px;
     height: 100%;
@@ -25,15 +26,15 @@ export const HeaderContainer = styled.header`
         align-items: center;
         width: 450px;
         span {
-          font-size: 18px;
+          font-size: 1.2rem;
           font-weight: bold;
           color: #fff;
         }
       }
       .logoWrapper {
         position: relative;
-        width: 50px;
-        height: 50px;
+        width: 3rem;
+        height: 3rem;
         margin-right: 4px;
       }
       .titles {
@@ -41,7 +42,7 @@ export const HeaderContainer = styled.header`
         display: flex;
         .title {
           margin-right: 58px;
-          font-size: 18px;
+          font-size: 1.3rem;
           cursor: pointer;
           color: #fff;
           font-weight: bold;
@@ -64,6 +65,21 @@ export const HeaderContainer = styled.header`
       display: flex;
       align-items: center;
     }
+    @media (max-width: 768px) {
+      width: 100%;
+      .logoCon {
+        width: fit-content !important;
+        span {
+          display: none;
+        }
+      }
+      .titles {
+        margin-left: 8px !important;
+        .title {
+          margin-right: 8px !important;
+        }
+      }
+    }
   }
 `;
 
@@ -79,7 +95,7 @@ export const LangShowCompent = styled.div`
   }
   .lang {
     margin-left: 6px;
-    font-size: 15px;
+    font-size: 1rem;
     color: #fff;
   }
 `;

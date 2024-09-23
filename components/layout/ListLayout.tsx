@@ -33,6 +33,9 @@ export const ListLayout = memo(({children}) => {
     }
 
     const canvas = document.getElementById('canvasId') as HTMLCanvasElement;
+    if (!canvas) {
+      return;
+    }
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     canvas.width = canvas.clientWidth;

@@ -16,7 +16,7 @@ export const Layout = memo(({children}) => {
   const {t} = useTranslation();
   const router = useRouter();
 
-  const judegeHasUuid = (callBack: any) => {
+  const judgeHasUuid = (callBack: any) => {
     if (!localStorage.getItem('uuid')) {
       FingerprintJS.load().then((fp) => {
         fp.get().then((result) => {
@@ -31,12 +31,14 @@ export const Layout = memo(({children}) => {
   };
 
   const iLoginWeb = () => {
+    const originUrl = document.referrer || 'direct';
     const uuid = localStorage.getItem('uuid') || '';
     loginWeb({
       shebei: navigator.userAgent,
       lang: navigator.language,
       comeTime: new Date().getTime(),
       uuid,
+      originUrl,
     }).then((res: any) => {
       if (res.code === 200) {
         console.log('success');
@@ -62,7 +64,7 @@ export const Layout = memo(({children}) => {
 
   useEffect(() => {
     progressInit(router);
-    judegeHasUuid(iLoginWeb);
+    judgeHasUuid(iLoginWeb);
     const listener = (e: any): void => {
       iLogOutWeb();
     };
@@ -70,10 +72,6 @@ export const Layout = memo(({children}) => {
   }, []);
   return (
     <>
-      <Head>
-        <title>{t('title')}</title>
-        <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-      </Head>
       <Header />
       <LayoutContainer>
         <LayoutMainContentContainer id='layout-main-content'>
