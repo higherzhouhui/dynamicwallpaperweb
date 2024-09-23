@@ -1,5 +1,4 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
-import Head from 'next/head';
 import {useRouter} from 'next/router';
 import {memo, useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
