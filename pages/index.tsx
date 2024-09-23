@@ -1,5 +1,5 @@
 import {LikeOutlined, MessageOutlined, StarOutlined} from '@ant-design/icons';
-import {Avatar, CollapseProps, List, Space, Statistic} from 'antd';
+import {Avatar, CollapseProps, List, Space} from 'antd';
 import Image from 'next/image';
 import {useRouter} from 'next/router';
 import React, {useEffect, useState} from 'react';
