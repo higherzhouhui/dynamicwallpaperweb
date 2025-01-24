@@ -1,16 +1,16 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import type { AppProps } from "next/app";
+import type {AppProps} from 'next/app';
 
-import { Layout, Message } from "@/components";
-import Providers from "@/context";
-import { GlobalStyle } from "@/styles/global";
+import {Layout, Message} from '@/components';
+import Providers from '@/context';
+import {GlobalStyle} from '@/styles/global';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({Component, pageProps}: AppProps) {
   return (
     <>
       <Head>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content='width=device-width, initial-scale=1.0' name='viewport' />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
