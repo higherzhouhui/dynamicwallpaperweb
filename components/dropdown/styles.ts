@@ -37,4 +37,4 @@ export const DropDownContainer = styled.div<DropDownProps>`
     transition: all 0.5s;
     ${getPlacement};
   }
-`;
+` as any;

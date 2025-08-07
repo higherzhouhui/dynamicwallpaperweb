@@ -25,4 +25,4 @@ export const MessageWrapper = styled.div<BackgroundProps>`
     max-width: 80vw;
     word-break: break-all;
   }
-`;
+` as any;

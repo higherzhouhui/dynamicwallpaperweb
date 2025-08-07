@@ -23,7 +23,6 @@ const handleError = (res: any) => {
 };
 // 创建请求实例
 const instance = axios.create({
-  baseURL: process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:1210' : '',
   timeout: 500000,
   headers: {
     'Content-Type': 'application/json;charset=UTF-8',

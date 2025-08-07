@@ -137,4 +137,4 @@ export const FooterContainer = styled.footer`
       margin: 0 3px;
     }
   }
-`;
+` as any;

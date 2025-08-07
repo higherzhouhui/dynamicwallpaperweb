@@ -33,7 +33,7 @@ const Header: NextPage = () => {
 
   const handleTongji = (item: any) => {
     if (item.down) {
-      clickDownRequest({uuid: localStorage.getItem('uuid') || ''});
+      clickDownRequest({id: sessionStorage.getItem('id') || undefined});
     }
   };
 

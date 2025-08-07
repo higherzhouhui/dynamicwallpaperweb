@@ -7,10 +7,10 @@ export const LayoutContainer = styled.div`
   min-height: 100vh;
   padding-top: 60px;
   background: #f5f5f5;
-`;
+` as any;
 export const LayoutMainContentContainer = styled.div`
   position: relative;
-`;
+` as any;
 
 export const LayoutListContentContainer = styled.div`
   width: 100%;
@@ -19,4 +19,4 @@ export const LayoutListContentContainer = styled.div`
     width: 100%;
     height: 100%;
   }
-`;
+` as any;

@@ -3,6 +3,7 @@ import {FC, memo, ReactNode} from 'react';
 import {DropDownContainer} from './styles';
 
 type IProps = {
+  children: ReactNode;
   OptionsNode: ReactNode;
   containerClass?: string;
   optionClass?: string;

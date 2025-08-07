@@ -105,7 +105,7 @@ const Home: NextPage = () => {
   );
 
   const handleTongji = () => {
-    clickDownRequest({uuid: localStorage.getItem('uuid') || ''});
+    clickDownRequest({id: sessionStorage.getItem('id') || undefined});
   };
 
   const handleClickImg = () => {};

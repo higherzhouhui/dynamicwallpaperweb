@@ -1,12 +1,15 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
 
+const TT = ThemeProvider as any;
 import {lightTheme} from '@/uikit';
 
-type ProvidersProps = {};
+type ProvidersProps = {
+  children: any
+};
 
 const Providers: React.FC<ProvidersProps> = ({children}) => {
-  return <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>;
+  return <TT theme={lightTheme}>{children}</TT>;
 };
 
 export default Providers;

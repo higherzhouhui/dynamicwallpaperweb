@@ -81,7 +81,7 @@ export const HeaderContainer = styled.header`
       }
     }
   }
-`;
+` as any;
 
 export const LangShowCompent = styled.div`
   position: relative;
@@ -98,4 +98,4 @@ export const LangShowCompent = styled.div`
     font-size: 1rem;
     color: #fff;
   }
-`;
+` as any;

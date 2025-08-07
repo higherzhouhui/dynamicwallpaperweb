@@ -4,12 +4,19 @@ const next = require('next');
 
 const devProxy = {
   '/api': {
-    target: 'http://127.0.0.1:8900',
+    target: 'http://127.0.0.1:2202',
     pathRewrite: {
       '^/api': '/',
     },
     changeOrigin: true,
   },
+  '/checkIp': {
+    target: 'http://ip-api.com/json',
+    pathRewrite: {
+      '^/checkIp': '/',
+    },
+    changeOrigin: true,
+  }
 };
 
 const port = parseInt(process.env.PORT, 10) || 1211;
