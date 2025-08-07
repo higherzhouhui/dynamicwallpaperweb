@@ -5,11 +5,19 @@ import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
 import {AboutContainer} from '@/styles/about';
+import {SEO} from '@/components';
 const About: NextPage = () => {
   const lang = i18n.language;
   const {t} = useTranslation();
   return (
-    <AboutContainer>
+    <>
+      <SEO 
+        title="关于我们"
+        description="了解Dynamic Wallpaper团队，我们致力于为用户提供最优质的动态壁纸体验。"
+        keywords="关于我们,团队介绍,联系方式,动态壁纸团队"
+        canonical="https://your-domain.com/about"
+      />
+      <AboutContainer>
       <div className='cover'>
         <Image
           alt='cover'
@@ -32,6 +40,7 @@ const About: NextPage = () => {
         </div>
       </div>
     </AboutContainer>
+    </>
   );
 };
 

@@ -62,6 +62,7 @@ const Admin: NextPage = () => {
     comeTimeEnd: '',
     visitNumMin: '',
     downNumMin: '',
+    manager: '',
     page: 1,
     pageSize: 20,
     timeRange: null as any,
@@ -200,7 +201,7 @@ const Admin: NextPage = () => {
       render: (text: string) => moment(text).format('YYYY-MM-DD HH:mm:ss'),
     },
     {
-      title: '离开时间',
+      title: '最后一次离开时间',
       dataIndex: 'leaveTime',
       key: 'leaveTime',
       width: 160,
@@ -246,6 +247,12 @@ const Admin: NextPage = () => {
       key: 'timezone',
       width: 100,
     },
+    {
+      title: '管理员',
+      dataIndex: 'manager',
+      key: 'manager',
+      width: 100,
+    },
   ];
 
   const handleTimeRangeChange = (dates: any) => {
@@ -289,6 +296,7 @@ const Admin: NextPage = () => {
   // 搜索用户数据
   const searchUsers = async () => {
     setLoading(true);
+    getStatsData();
     try {
       const params = new URLSearchParams({
         page: searchConditions.page.toString(),
@@ -455,14 +463,14 @@ const Admin: NextPage = () => {
                 onChange={(e) => setSearchConditions(prev => ({ ...prev, ip: e.target.value }))}
               />
             </Col>
-            <Col span={4}>
+            <Col span={6}>
               <Input
                 placeholder="来源URL(如果查询直接访问输入direct)"
                 value={searchConditions.originUrl}
                 onChange={(e) => setSearchConditions(prev => ({ ...prev, originUrl: e.target.value }))}
               />
             </Col>
-                          <Col span={3}>
+            <Col span={4}>
                 <Select
                   placeholder="语言"
                   value={searchConditions.lang || undefined}
@@ -550,9 +558,9 @@ const Admin: NextPage = () => {
               </Col>
           </Row>
           <Row gutter={16} style={{ marginTop: 16 }}>
-            <Col span={8}>
+            <Col span={6}>
             <RangePicker
-              format='YYYY-MM-DD'
+              format='YYYY-MM-DD HH:mm:ss'
               showTime={{
                 hideDisabledOptions: true,
               }}
@@ -577,6 +585,12 @@ const Admin: NextPage = () => {
                 value={searchConditions.downNumMin}
                 onChange={(e) => setSearchConditions(prev => ({ ...prev, downNumMin: e.target.value }))}
               />
+            </Col>
+            <Col span={4}> 
+                <Select placeholder='管理员' value={searchConditions.manager || undefined} onChange={(value) => setSearchConditions(prev => ({ ...prev, manager: value || '' }))} style={{ width: '100%' }} allowClear>
+                  <Select.Option value='true'>是</Select.Option>
+                  <Select.Option value='false'>否</Select.Option>
+                </Select>
             </Col>
             <Col span={6}>
               <Button type="primary" onClick={searchUsers} style={{ marginRight: 12 }}>搜索</Button>

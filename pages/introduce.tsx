@@ -8,6 +8,7 @@ import type {NextPage} from 'next';
 
 import i18n from '@/locales/config';
 import {IntroduceContainer} from '@/styles/introduce';
+import {SEO} from '@/components';
 
 import 'swiper/css';
 
@@ -45,7 +46,14 @@ const Introduce: NextPage = () => {
   }, [size]);
 
   return (
-    <IntroduceContainer ref={introduceRef}>
+    <>
+      <SEO 
+        title="功能介绍"
+        description="详细了解Dynamic Wallpaper的功能特性，包括视频壁纸、音乐可视化、屏幕保护等强大功能。"
+        keywords="功能介绍,功能特性,视频壁纸,音乐可视化,屏幕保护,动态壁纸功能"
+        canonical="https://your-domain.com/introduce"
+      />
+      <IntroduceContainer ref={introduceRef}>
       <div className='cover'>
         <div className='imgWrapper'>
           <Image
@@ -98,6 +106,7 @@ const Introduce: NextPage = () => {
         })}
       </div>
     </IntroduceContainer>
+    </>
   );
 };
 
