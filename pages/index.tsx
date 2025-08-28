@@ -12,7 +12,6 @@ import i18n from '@/locales/config';
 import {clickDownRequest} from '@/services/common';
 import {HomeContainer} from '@/styles/home';
 import {SvgIcon} from '@/uikit';
-import {SEO} from '@/components';
 
 const Home: NextPage = () => {
   const {t} = useTranslation();
@@ -20,7 +19,6 @@ const Home: NextPage = () => {
   const [showAll, setShowAll] = useState(false);
   const formatter = (value: any) => <CountUp end={value} separator=',' />;
   const router = useRouter();
-
   const items: CollapseProps['items'] = [
     {
       key: '1',
@@ -107,154 +105,180 @@ const Home: NextPage = () => {
   );
 
   const handleTongji = () => {
-    clickDownRequest();
+    clickDownRequest({id: sessionStorage.getItem('id') || undefined});
   };
 
   const handleClickImg = () => {};
 
+  useEffect(() => {
+    setGnList(staticList);
+  }, [lang]);
+
   return (
-    <>
-      <SEO 
-        title="首页"
-        description="Dynamic Wallpaper - 专业的动态壁纸引擎，支持视频壁纸、音乐可视化、屏幕保护等功能。让您的桌面更加生动有趣。"
-        keywords="动态壁纸,动态引擎,壁纸引擎,视频壁纸,可视化音乐,Upupoo,Mac屏保,壁纸精灵,桌面美化"
-        canonical="https://your-domain.com/"
-      />
-      <HomeContainer>
-        <div className='header'>
-          <div className='title'>
-            <h1>{t('title')}</h1>
-            <p>{t('subtitle')}</p>
-          </div>
-          <div className='download'>
-            <button onClick={handleTongji}>
-              <SvgIcon name='download' />
-              {t('download')}
-            </button>
-          </div>
-        </div>
-
-        <div className='stats'>
-          <div className='stat-item'>
-            <div className='number'>{formatter(1000000)}</div>
-            <div className='label'>{t('downloads')}</div>
-          </div>
-          <div className='stat-item'>
-            <div className='number'>{formatter(500000)}</div>
-            <div className='label'>{t('users')}</div>
-          </div>
-          <div className='stat-item'>
-            <div className='number'>{formatter(10000)}</div>
-            <div className='label'>{t('wallpapers')}</div>
-          </div>
-        </div>
-
-        <div className='features'>
-          <h2>{t('features')}</h2>
-          <div className='feature-grid'>
-            {items.map((item) => (
-              <div key={item.key} className='feature-item'>
-                <h3>{item.label}</h3>
-                {item.children}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className='gallery'>
-          <h2>{t('gallery')}</h2>
-          <div className='gallery-grid'>
-            {gnList.slice(0, showAll ? gnList.length : 6).map((item, index) => (
-              <div key={index} className='gallery-item'>
-                <Image
-                  src={item.src}
-                  alt={item.content}
-                  width={300}
-                  height={200}
-                  layout='responsive'
-                />
-                <p>{item.content}</p>
-              </div>
-            ))}
-          </div>
-          {!showAll && (
-            <button onClick={() => setShowAll(true)} className='show-more'>
-              {t('showMore')}
-            </button>
-          )}
-        </div>
-
-        <div className='reviews'>
-          <h2>{t('reviews')}</h2>
-          <List
-            dataSource={data}
-            footer={
-              <div>
-                <b>Mac App Store</b> support origin data
-              </div>
-            }
-            itemLayout='vertical'
-            pagination={{
-              position: 'top',
-              align: 'end',
-              pageSize: 3,
+    <HomeContainer>
+      <div className='cover'>
+        <Image
+          alt='cover'
+          blurDataURL='/static/image/blur.png'
+          layout='fill'
+          placeholder='blur'
+          src={`/static/image/${lang}/cover.png`}
+        />
+        <div className='downWrapper'>
+          <div className='title'>{t('downTitle')}</div>
+          {/* <div className='slogo'>
+            <div className='color1'>{t('gbdd')}</div>
+            <div className='color2'>{t('ybhp')}</div>
+          </div> */}
+          <a
+            href={t('downLoadUrl')}
+            rel='noreferrer'
+            target='_blank'
+            onClick={() => {
+              handleTongji();
             }}
-            renderItem={(item) => (
-              <List.Item
-                actions={[
-                  <IconText
-                    icon={StarOutlined}
-                    key='list-vertical-star-o'
-                    text={item.start}
-                  />,
-                  <IconText
-                    icon={LikeOutlined}
-                    key='list-vertical-like-o'
-                    text={item.good}
-                  />,
-                  <IconText
-                    icon={MessageOutlined}
-                    key='list-vertical-message'
-                    text={item.comment}
-                  />,
-                ]}
-                extra={
-                  <a
-                    className='extraImg'
-                    href={t('downLoadUrl')}
-                    rel='noreferrer'
-                    target='_blank'
-                    onClick={() => {
-                      handleTongji();
-                    }}
-                  >
-                    <div className='imgWrapper'>
-                      <Image
-                        alt='gongneng'
-                        blurDataURL='/static/image/blur.png'
-                        layout='fill'
-                        placeholder='blur'
-                        src={item.extraImg}
-                      />
-                    </div>
-                  </a>
-                }
-                key={item.title}
-              >
-                <List.Item.Meta
-                  avatar={<Avatar size='large' src={item.avatar} />}
-                  description={item.description}
-                  title={<span>{item.title}</span>}
-                />
-                <span style={{color: '#333', fontSize: '13px'}}>
-                  {item.content}
-                </span>
-              </List.Item>
-            )}
-            size='large'
-          />
+          >
+            <SvgIcon
+              className='svgIcon'
+              height={50}
+              name={`${lang}blackdown`}
+            />
+          </a>
         </div>
+      </div>
+      <div className='mainContent'>
+        <div className='introduce'>
+          <div className='title'>{t('productIntroduce')}</div>
+          <div className='produceDesc'>{t('productDesc')}</div>
+          <div className='subTitle'>{t('feature')}</div>
+          <div className='listWrapper'>
+            {[...Array(17)].map((_, index) => {
+              return (
+                <li className='listItem' key={index}>
+                  {t(`feature${index + 1}`)}
+                </li>
+              );
+            })}
+          </div>
 
+          {/* <Collapse defaultActiveKey={['1']} items={items} /> */}
+        </div>
+        <div className='gongneng'>
+          <div className='title'>{t('gongneng')}</div>
+          <div className='content'>
+            {gnList.map((item, index) => {
+              return index < (showAll ? 10 : 4) ? (
+                <div className='item' key={index}>
+                  <div className='imgWrapper'>
+                    <Image
+                      alt='gongneng'
+                      blurDataURL='/static/image/blur.png'
+                      layout='fill'
+                      placeholder='blur'
+                      src={item.src}
+                      onClick={() => {
+                        handleClickImg();
+                      }}
+                    />
+                  </div>
+                  <div className='desc'>{item.content}</div>
+                </div>
+              ) : null;
+            })}
+          </div>
+          <div
+            className={`lookMore ${showAll ? '' : 'notAll'}`}
+            onClick={() => {
+              setShowAll(!showAll);
+            }}
+          >
+            {showAll ? t('shouqi') : t('discover')}
+            <div className='imgWrapper'>
+              <Image alt='more' layout='fill' src='/static/image/more.png' />
+            </div>
+          </div>
+        </div>
+        <div className='user'>
+          {lang === 'zh' ? (
+            <div className='title Statistic'>
+              深受超过 3,784,575 位用户的信赖
+            </div>
+          ) : (
+            <div className='title Statistic'>
+              Deeply surpassed 3,784,575 Trusted by users
+            </div>
+          )}
+
+          <div className='comments'>
+            <List
+              dataSource={data}
+              footer={
+                <div>
+                  <b>Mac App Store</b> support origin data
+                </div>
+              }
+              itemLayout='vertical'
+              pagination={{
+                position: 'top',
+                align: 'end',
+                pageSize: 3,
+              }}
+              renderItem={(item) => (
+                <List.Item
+                  actions={[
+                    <IconText
+                      icon={StarOutlined}
+                      key='list-vertical-star-o'
+                      text={item.start}
+                    />,
+                    <IconText
+                      icon={LikeOutlined}
+                      key='list-vertical-like-o'
+                      text={item.good}
+                    />,
+                    <IconText
+                      icon={MessageOutlined}
+                      key='list-vertical-message'
+                      text={item.comment}
+                    />,
+                  ]}
+                  extra={
+                    <a
+                      className='extraImg'
+                      href={t('downLoadUrl')}
+                      rel='noreferrer'
+                      target='_blank'
+                      onClick={() => {
+                        handleTongji();
+                      }}
+                    >
+                      <div className='imgWrapper'>
+                        <Image
+                          alt='gongneng'
+                          blurDataURL='/static/image/blur.png'
+                          layout='fill'
+                          placeholder='blur'
+                          src={item.extraImg}
+                        />
+                      </div>
+                    </a>
+                  }
+                  key={item.title}
+                >
+                  <List.Item.Meta
+                    avatar={<Avatar size='large' src={item.avatar} />}
+                    description={item.description}
+                    title={<span>{item.title}</span>}
+                  />
+                  <span style={{color: '#333', fontSize: '13px'}}>
+                    {item.content}
+                  </span>
+                </List.Item>
+              )}
+              size='large'
+            />
+          </div>
+        </div>
         <div className='video'>
           <div className='title'>{t('tiyan')}</div>
           <video controls preload='auto'>
@@ -262,8 +286,24 @@ const Home: NextPage = () => {
             Your browser does not support HTML5 video.
           </video>
         </div>
-      </HomeContainer>
-    </>
+      </div>
+      {/* <Swiper
+        className='mySwiper'
+        loop={false}
+     
+        onSwiper={setSwiper}
+      >
+        {tabs.map((item, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <SwipperItem>
+               
+              </SwipperItem>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper> */}
+    </HomeContainer>
   );
 };
 
