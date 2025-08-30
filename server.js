@@ -6,7 +6,7 @@ const devProxy = {
   '/api': {
     target: 'http://127.0.0.1:2202',
     pathRewrite: {
-      '^/api': '/',
+      '^/api': '/api',
     },
     changeOrigin: true,
   },

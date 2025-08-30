@@ -7,7 +7,7 @@ import Header from './header/index';
 import {ListLayout} from './ListLayout';
 import {LayoutContainer, LayoutMainContentContainer} from './styles';
 
-import {loginWeb, logOutWeb,getIp} from '@/services/common';
+import {loginWeb, logOutWeb} from '@/services/common';
 import {progressInit} from '@/utils';
 import {getBrowserTimezone} from '@/utils/timezone';
 import {getScreenInfo} from '@/utils/screen';
@@ -17,13 +17,6 @@ export const Layout = memo(({children}) => {
   let data = {}
   const judgeHasUuid = async(callBack: any) => {
     try {
-      const res: any = await getIp();
-      const ip = res.query;
-      const address = `${res.country}-${res.city}`
-      data = {
-        ip,
-        address,
-      }
       if (!localStorage.getItem('uuid')) {
         FingerprintJS.load().then((fp) => {
           fp.get().then((result) => {

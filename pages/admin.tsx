@@ -104,13 +104,13 @@ const Admin: NextPage = () => {
       key: 'ip',
       width: 120,
     },
-    {
-      title: '地址',
-      dataIndex: 'address',
-      key: 'address',
-      width: 150,
-      ellipsis: true,
-    },
+    // {
+    //   title: '地址',
+    //   dataIndex: 'address',
+    //   key: 'address',
+    //   width: 150,
+    //   ellipsis: true,
+    // },
     {
       title: '来源',
       dataIndex: 'originUrl',
@@ -455,13 +455,6 @@ const Admin: NextPage = () => {
                 <Option value="iOS">iOS</Option>
                 <Option value="Android">Android</Option>
               </Select>
-            </Col>
-            <Col span={4}>
-              <Input
-                placeholder="IP地址"
-                value={searchConditions.ip}
-                onChange={(e) => setSearchConditions(prev => ({ ...prev, ip: e.target.value }))}
-              />
             </Col>
             <Col span={6}>
               <Input
